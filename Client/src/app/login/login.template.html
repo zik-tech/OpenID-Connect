@@ -1,0 +1,29 @@
+<h1>Login</h1>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div>Email: <input formControlName="username" /></div>
+
+  <div>Password: <input formControlName="password" /></div>
+
+  <button
+    md-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="!loginForm.valid"
+  >
+    Submit
+  </button>
+  <button md-raised-button color="primary" type="button" (click)="logOut()">
+    log out
+  </button>
+  <button
+    md-raised-button
+    color="primary"
+    type="button"
+    (click)="getWetherForecast()"
+  >
+    Call secure api
+  </button>
+</form>
+
+Response: <br />
+<code><pre>{{response | json}}</pre></code>
